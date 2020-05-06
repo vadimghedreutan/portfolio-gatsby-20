@@ -8,7 +8,6 @@ import '../scss/app.scss'
 //styled components
 import { normalize } from "styled-normalize"
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
-import { lightTheme, darkTheme } from '../styles/theme';
 
 //Hooks
 import useSiteMetadata from '../hooks/useSiteMetadata';
@@ -36,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  a {
+    color: ${props => props.theme.text};
+  }
+
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -50,6 +53,21 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 `
+const lightTheme = {
+  body: '#fff',
+  text: '#010101',
+  subtext: '#95A3A6',
+  line: '#f04176',
+  bgText: '#e7f4fb'
+}
+
+const darkTheme = {
+  body: '#040404',
+  text: '#fff',
+  subtext: '#fff',
+  line: '#00d7c0',
+  bgText: '#040404'
+}
 
 const Layout = ({ children }) => {
     const {currentTheme} = useGlobalStateContext()

@@ -16,7 +16,6 @@ export const Logo = styled.div`
   font-family: var(--fontTitle);
   font-size: 1.2rem;
   font-weight: 800;
-  color: ${props => props.theme.text};
   cursor: pointer;
   span {
     color: ${props => props.theme.line};
@@ -38,7 +37,6 @@ export const Menu = styled.div`
         position: relative;
         font-family: var(--fontTitle);
         font-size: 1.2rem;
-        color: ${props => props.theme.text};
         &::after {
           content: "";
           position: absolute;

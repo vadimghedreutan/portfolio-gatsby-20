@@ -50,7 +50,7 @@ export const Flex = styled.div`
     css`
       p {
         font-size: 1rem;
-        color: ${props => props.theme.text};
+        color: #fff;
         @media (max-width: 320px) {
           font-size: 0.8rem;
         }
@@ -61,7 +61,7 @@ export const Flex = styled.div`
         li {
           margin-right: 10px;
           svg {
-            fill: ${props => props.theme.text};
+            fill: #fff;
             @media (max-width: 320px) {
               width: 24px;
               height: 24px;
@@ -161,7 +161,7 @@ export const ToggTheme = styled.div`
 
 export const Footer = styled.footer`
   padding: 1rem 0;
-  background: ${props => props.theme.bgFooter};  
+  background: #010101;  
 `
 
 // Not found 
