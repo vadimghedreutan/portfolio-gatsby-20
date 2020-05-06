@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
 //Style scss
 import '../scss/app.scss'
@@ -10,6 +9,9 @@ import '../scss/app.scss'
 import { normalize } from "styled-normalize"
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
 import { lightTheme, darkTheme } from '../styles/theme';
+
+//Hooks
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
 //global Context
 import {useGlobalStateContext} from '../context/globalContext'
@@ -50,42 +52,27 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
-  const {currentTheme} = useGlobalStateContext()
-  return (
-    <StaticQuery
-    query={graphql`
-      {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
+    const {currentTheme} = useGlobalStateContext()
+    const { title } = useSiteMetadata();
+      return (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={title}
           meta={[
             { name: 'description', content: 'You need a website for your startup or business?' },
             { name: 'keywords', content: 'create website, responsive web design, web developer, website, website design, web designer'},
           ]}
         />
-        <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
+
+        <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
           <GlobalStyle />
           <Header />
-          <main>
-            {children}
-          </main>
+            <main>{children}</main>
           <Footer />
         </ThemeProvider>
       </>
-    )}
-  />
-  )
-}
-
-
+    );
+  };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

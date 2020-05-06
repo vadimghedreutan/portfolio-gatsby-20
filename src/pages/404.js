@@ -1,10 +1,10 @@
 import React from 'react'
 
-//Styled Components
-import {Container, NotFoundTitle, NotFound, HeadLine} from '../styles/globalStyles'
-
 //Components
 import Layout from '../components/Layout'
+
+//Styled Components
+import {Container, NotFoundTitle, NotFound, HeadLine} from '../styles/globalStyles'
 
 const parent = {
   initial: {y: 800},
