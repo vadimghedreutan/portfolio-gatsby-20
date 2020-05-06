@@ -1,0 +1,137 @@
+//Grid Top
+.grid-top {
+  display: grid; 
+  grid-row-gap: 10px;
+
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  &__l-img {
+    background-color: var(--green);
+  }
+
+  &__r-img {
+    background-color: var(--red);
+  }
+
+  &__lb-img {
+    background-color: var(--red);
+  }
+
+  &__rb-img {
+    background-color: var(--green);
+  }
+
+  @media (min-width: 667px) {
+    grid-template-columns: 1.5fr 0.5fr 1.5fr; 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-column-gap: 10px;
+
+    &__l-img {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  
+    &__r-img {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+  
+    &__lb-img {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+  
+    &__rb-img {
+      grid-area: 2 / 2 / 3 / 4;
+    }
+  }
+}
+
+//gastby img custom
+.gatsby-image-wrapper {
+  transform: scale(1);
+  transition: 1s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+//bottom projects
+.github, .tools {
+  padding: 0 1.2rem;
+  @media (max-width: 414px) {
+    padding: 0;
+  }
+}
+
+.github {
+  line-height: 1;
+}
+
+.tools {
+  background: var(--red);
+  margin-top: -72px;
+  padding-top: 1.2rem;
+  @media (max-width: 414px) {
+    display: none;
+  }
+
+  &__content {
+    color: #fff;
+    display: flex;
+    padding: 1rem 0;
+
+    &-icon {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      font-family: var(--fontTitle);
+    }
+  }
+}
+
+// Spinner
+.spinner svg {
+  height: 42px;
+  width: 42px; 
+}
+
+//Error
+.error, .loading {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  @media (max-width: 414px) {
+    top: 30%;
+  }
+  @media (max-width: 320px) {
+    top: 40%;
+  }
+
+  span {
+    font-size: 2rem;
+    color: #fff;
+    background: var(--green);
+    padding: .4rem;
+  }
+}
+
+//lol colors
+$chartColors: var(--green), var(--red), var(--lightBlue);
+$chartColorsLength: length($chartColors);
+
+.lol {
+  @for $i from 1 through $chartColorsLength {
+    &:nth-of-type(#{$chartColorsLength}n+#{$i}) {
+      background-color: nth($chartColors, $i);      
+    }
+  }
+  padding: 2rem;  
+}
