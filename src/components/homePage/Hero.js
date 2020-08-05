@@ -17,7 +17,7 @@ const Hero = () => {
           initial={{ y: -20, opacity: 0 }}
           transition={{ duration: 1, ease: [.25, .75, .5, 1.25] }}
         >
-          <h1>Hi! I’m Ghedrik,</h1>
+          <h1>Hi! I’m Vadim,</h1>
           <p>a Web Developer based in</p>
           <Location>
             <Icon />  

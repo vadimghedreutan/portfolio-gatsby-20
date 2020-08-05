@@ -3,14 +3,16 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 
 function Scroll(props) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const animation = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true
+  });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      animation.start("visible");
     }
-  }, [controls, inView]);
+  }, [animation, inView]);
 
   const defaultVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.33, 1, 0.68, 1]}},
@@ -21,7 +23,7 @@ function Scroll(props) {
     <>
       <motion.div
         ref={ref}
-        animate={controls}
+        animate={animation}
         initial="hidden"
         variants={defaultVariants}
       >

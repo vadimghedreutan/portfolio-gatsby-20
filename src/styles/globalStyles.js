@@ -161,7 +161,7 @@ export const ToggTheme = styled.div`
 
 export const Footer = styled.footer`
   padding: 1rem 0;
-  background: #010101;  
+  background: #343837;  
 `
 
 // Not found 

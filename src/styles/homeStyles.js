@@ -33,7 +33,7 @@ export const GithubContent = styled.div`
       color: ${props => props.theme.text}
     }
   }
-  p {
+  p, span {
     font-size: 1rem;
     @media (max-width: 320px) {
       font-size: 0.8rem;

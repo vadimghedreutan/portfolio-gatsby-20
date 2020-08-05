@@ -30,7 +30,10 @@ export const Menu = styled.div`
     flex-direction: row;
     li {
       margin-right: 0.6rem;
-      &:nth-child(3) {
+      @media (max-width: 414px) {
+        margin-right: 1.5rem;
+      }
+      &:nth-child(4) {
         margin-right: 0;
       }
       a {

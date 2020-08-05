@@ -69,7 +69,7 @@ const ProjectsAbout = () => {
                   style={{ width: '100%' }}
                   fluid={image.childImageSharp.fluid}
                 />
-            </div>
+              </div>
             </Scroll>
           ))}
         </Grid>

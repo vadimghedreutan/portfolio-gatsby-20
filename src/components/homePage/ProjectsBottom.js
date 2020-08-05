@@ -49,7 +49,7 @@ const ProjectsBottom = () => {
                 <GithubContent>
                   <h3><Emoji symbol="🚀" label="rocket"/> <a href={item.html_url}>{item.name}</a></h3>
                   <p>⭢ {item.description}</p>
-                  <p>{item.homepage}</p>
+                  <a href={item.homepage}><span>{item.homepage}</span></a>
                 </GithubContent>
                 </Scroll>
               )
@@ -104,7 +104,6 @@ const ProjectsBottom = () => {
                 Fast Loading Times
               </div>
             </div>
-
           </div>
         </Grid>
       </Container>

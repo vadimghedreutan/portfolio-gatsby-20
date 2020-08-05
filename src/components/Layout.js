@@ -82,7 +82,7 @@ const Layout = ({ children }) => {
           ]}
         />
 
-        <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
+        <ThemeProvider theme={currentTheme === "light" ? lightTheme : darkTheme}>
           <GlobalStyle />
           <Header />
             <main>{children}</main>

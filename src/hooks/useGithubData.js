@@ -4,7 +4,7 @@ const useGithubData = () => {
   const [data, setData] = useState([])
   const [isLoading, setLoading] = useState(true)
   const [isError, setError] = useState()
-  const [url] = useState('https://api.github.com/users/vadimghedreutan/repos?page=1&per_page=10')
+  const [url] = useState('https://api.github.com/users/vadimghedreutan/repos?sort=created&page=1&per_page=10')
 
   useEffect(() => {
     async function fetchData() {

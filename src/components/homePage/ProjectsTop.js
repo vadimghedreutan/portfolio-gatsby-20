@@ -16,7 +16,7 @@ const ProjectsTop = () => {
           }
         }
       },
-      book: file(relativePath: {eq: "book_share.png"}) {
+      restaurant: file(relativePath: {eq: "teemone.png"}) {
         id
         childImageSharp {
           fluid{
@@ -60,10 +60,10 @@ const ProjectsTop = () => {
                   fluid={data.covid.childImageSharp.fluid}
                 />
               </a>
-              <a href="https://booksharegkapp.herokuapp.com" className="grid-top__r-img">
+              <a href="https://teemone.de" className="grid-top__r-img">
                 <Img
                   style={{ width: '100%' }}  
-                  fluid={data.book.childImageSharp.fluid}
+                  fluid={data.restaurant.childImageSharp.fluid}
                 />
               </a>
               <a href="https://typeracer-3f0ce.firebaseapp.com" className="grid-top__lb-img">
